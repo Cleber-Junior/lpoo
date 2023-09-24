@@ -18,7 +18,7 @@ public class VeiculoController {
         System.out.println(car1);
 
         System.out.println("------- Exercicio 1.C");
-        Veiculo cam1 = new Caminhao(8, "Combustão", "Ford", "F-350", 2020, 200000);
+        Veiculo cam1 = new Caminhao(8, "Combustão", "Ford", "F-350", 2020, 200000, "63826336379", "5456baoq846", "I93YHU0A");
         System.out.println(cam1);
 
         System.out.println("------- Exercicio 2 -------\n");
@@ -34,11 +34,11 @@ public class VeiculoController {
         Veiculo car5 = new Carro(4, "Combustão", "Volkswagen", "Polo", 2014, 300, "25000", "5456sdad846", "TDS73984");
         Veiculo car6 = new Carro(4, "Combustão", "Volkswagen", "Polo", 2013, 300, "25000", "5456sdad846", "VSG63836");
 
-        Veiculo cam2 = new Caminhao(8, "Combustão", "Ford", "F-350", 2016, 200000);
-        Veiculo cam3 = new Caminhao(8, "Combustão", "Ford", "F-350", 2018, 200000);
-        Veiculo cam4 = new Caminhao(8, "Combustão", "Ford", "F-350", 2023, 200000);
-        Veiculo cam5 = new Caminhao(8, "Combustão", "Ford", "F-350", 2021, 200000);
-        Veiculo cam6 = new Caminhao(8, "Combustão", "Ford", "F-350", 2012, 200000);
+        Veiculo cam2 = new Caminhao(8, "Combustão", "Ford", "F-350", 2016, 200000,  "01546914016", "5456baoq846", "IJD810MD");
+        Veiculo cam3 = new Caminhao(8, "Combustão", "Ford", "F-350", 2018, 200000,  "42961329073", "2819mfjd720", "iHCUI17K");
+        Veiculo cam4 = new Caminhao(8, "Combustão", "Ford", "F-350", 2023, 200000,  "83649356294", "6173dwop927", "I93YHU0A");
+        Veiculo cam5 = new Caminhao(8, "Combustão", "Ford", "F-350", 2021, 200000,  "76203739584", "7290oqoe898", "D71NDUQ7");
+        Veiculo cam6 = new Caminhao(8, "Combustão", "Ford", "F-350", 2012, 200000,  "02673592072", "5278jfhd726", "JC13619M");
 
         List<Veiculo> veiculoList = new ArrayList<>();
         veiculoList.add(bike2);
@@ -61,10 +61,26 @@ public class VeiculoController {
         veiculoList.sort(Comparator.comparing(Veiculo::getAnoFabricacao).reversed());
         System.out.println(veiculoList);
 
-        System.out.println("------- 2.B Ordenação Automoveis -------");
+        System.out.println("\n------- 2.B Ordenação Automoveis -------\n");
         veiculoList.forEach(veiculo -> {
             if(veiculo instanceof Automovel){
                 System.out.println(veiculo.toString());
+            }
+        });
+
+        System.out.println("\n------- 2.C Ordenação Bicicletas -------\n");
+        veiculoList.forEach(veiculo -> {
+            if (veiculo instanceof Bicicleta){
+                System.out.println(veiculo.toString());
+            }
+        });
+
+        System.out.println("\n------- 2.D Ordenação Veiculos com I e i -------\n");
+        veiculoList.forEach(veiculo -> {
+            if (veiculo instanceof Automovel){
+                if (((Automovel) veiculo).getPlaca().startsWith("I") || ((Automovel) veiculo).getPlaca().startsWith("i")){
+                    System.out.println(veiculo);
+                }
             }
         });
     }

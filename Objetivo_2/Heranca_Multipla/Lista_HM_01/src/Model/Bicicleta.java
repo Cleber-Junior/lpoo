@@ -25,6 +25,6 @@ public class Bicicleta extends Veiculo{
     public String toString() {
         return "Bicicleta:" +
                 " tamanhoRoda - " + tamanhoRoda +
-                "| chassi - " + chassi + "| " + super.toString();
+                "| chassi - " + chassi + "| ";
     }
 }

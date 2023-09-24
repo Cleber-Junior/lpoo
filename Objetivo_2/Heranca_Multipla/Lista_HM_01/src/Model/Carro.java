@@ -24,38 +24,38 @@ public class Carro extends Veiculo implements Automovel{
 
     @Override
     public String getRenavam() {
-        return null;
+        return renavam;
     }
 
     @Override
-    public Void serRenavam(String renavam) {
-        return null;
+    public void setRenavam(String renavam) {
+        this.renavam = renavam;
     }
 
     @Override
     public String getChassi() {
-        return null;
+        return chassi;
     }
 
     @Override
-    public Void setChassi(String chassi) {
-        return null;
+    public void setChassi(String chassi) {
+        this.chassi = chassi;
     }
 
     @Override
     public String getPlaca() {
-        return null;
+        return placa;
     }
 
     @Override
-    public Void setPlaca(String placa) {
-        return null;
+    public void setPlaca(String placa) {
+        this.placa = placa;
     }
 
     @Override
     public String toString() {
         return "Carro: " +
                 "capacidaddePortaMalas - " + capacidaddePortaMalas +
-                " |" + super.toString();
+                " |";
     }
 }
