@@ -2,8 +2,7 @@ package Controller;
 
 import Model.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class FuncionarioController {
     public static void main(String[] args) {
@@ -35,37 +34,62 @@ public class FuncionarioController {
         System.out.println("\n---- Gerente ----");
         System.out.println(g1 + "" + g2 + "" + g3 + "" + g4 + "" + g5 + "" + g6);
 
-        List<Funcionario> funcionarios = new ArrayList<>();
-        funcionarios.add(dev1);
-        funcionarios.add(dev2);
-        funcionarios.add(dev3);
-        funcionarios.add(dev4);
-        funcionarios.add(dev5);
-        funcionarios.add(dev6);
-        funcionarios.add(g1);
-        funcionarios.add(g2);
-        funcionarios.add(g3);
-        funcionarios.add(g4);
-        funcionarios.add(g5);
-        funcionarios.add(g6);
+        List<Funcionario> funcionarioList = new ArrayList<>();
+        funcionarioList.add(dev1);
+        funcionarioList.add(dev2);
+        funcionarioList.add(dev3);
+        funcionarioList.add(dev4);
+        funcionarioList.add(dev5);
+        funcionarioList.add(dev6);
+        funcionarioList.add(g1);
+        funcionarioList.add(g2);
+        funcionarioList.add(g3);
+        funcionarioList.add(g4);
+        funcionarioList.add(g5);
+        funcionarioList.add(g6);
 
         System.out.println("\n------- Exercicio 1.B");
-        System.out.println(funcionarios);
+        System.out.println(funcionarioList);
 
-        List<Investidor> investidores = new ArrayList<>();
-        investidores.add(c1);
-        investidores.add(c2);
-        investidores.add(c3);
-        investidores.add(c4);
-        investidores.add(c5);
-        investidores.add(c6);
-        investidores.add(g1);
-        investidores.add(g2);
-        investidores.add(g3);
-        investidores.add(g4);
-        investidores.add(g5);
-        investidores.add(g6);
-        System.out.println(investidores);
+        List<Investidor> investidorList = new ArrayList<>();
+        investidorList.add(c1);
+        investidorList.add(c2);
+        investidorList.add(c3);
+        investidorList.add(c4);
+        investidorList.add(c5);
+        investidorList.add(c6);
+        investidorList.add(g1);
+        investidorList.add(g2);
+        investidorList.add(g3);
+        investidorList.add(g4);
+        investidorList.add(g5);
+        investidorList.add(g6);
+        System.out.println(investidorList);
 
+        System.out.println("\n------- Exercicio 1.C");
+        funcionarioList.sort(Comparator.comparing(Funcionario::getSalario).reversed());
+        System.out.println("--- Lista Funcionarios -- ");
+        System.out.println(funcionarioList);
+
+        investidorList.sort(Comparator.comparing(Investidor::getQuantidade).reversed());
+        System.out.println("--- Lista Clientes --");
+        System.out.println(investidorList);
+
+        System.out.println("\n------- Exercicio 1.D");
+        System.out.println("--- Funcionario  com maior salario");
+        Funcionario maior_salario = Collections.max(funcionarioList, Comparator.comparing(Funcionario::getSalario));
+        funcionarioList.forEach(fun ->{
+           if(fun.getSalario() >= maior_salario.getSalario()){
+                System.out.println(fun);
+            }
+        });
+
+        System.out.println("--- Investidor com maior número e ações");
+        Investidor maior_quantidade  =  Collections.max(investidorList, Comparator.comparing(Investidor::getQuantidade));
+        investidorList.forEach(inv ->{
+            if (inv.getQuantidade() >= maior_quantidade.getQuantidade()){
+                System.out.println(inv);
+            }
+        });
     }
 }
