@@ -3,6 +3,7 @@ package Controller;
 import Model.*;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class ContaController {
@@ -68,7 +69,46 @@ public class ContaController {
         System.out.print(cc2);
 
         System.out.println("\n------- Exercicio 1.E");
+        c1.setqdeCotas(100);
+        c2.setqdeCotas(400);
+        c3.setqdeCotas(600);
+        cc1.setqdeCotas(300);
+        cc2.setqdeCotas(600);
+        cc3.setqdeCotas(600);
+        System.out.println("---- Associados com Cotas ----");
+        System.out.println(AssociadoList);
 
+        System.out.println("\n------- Exercicio 1.F");
+        AssociadoList.sort(Comparator.comparing(Associado::getqdeCota).reversed());
+        System.out.println("---- Associados: Ordem maios ao menos ----");
+        System.out.println(AssociadoList);
+        System.out.println("---- Maiores cotas associados ----");
+        int maxC = AssociadoList.stream().max(Comparator.comparing(Associado::getqdeCota)).get().getqdeCota();
+        for (Associado a: AssociadoList){
+            if (a.getqdeCota() == maxC){
+                System.out.print(a);
+            }
+        }
+
+
+        System.out.println("\n------- Exercicio 1.G");
+        ContaList.sort(Comparator.comparing(Conta::getSaldo).reversed());
+        System.out.println("\n---- Contas: Ordem Decrescente");
+        System.out.println(ContaList);
+        System.out.println("\n---- Associados: Possuem conta");
+        for (Associado a: AssociadoList){
+            if (a instanceof ContaCorrente){
+                System.out.print(a);
+            }
+        }
+        System.out.println("\n---- Maior saldo bancario:");
+        double maiorS;
+        maiorS = ContaList.stream().max(Comparator.comparing(Conta::getSaldo)).get().getSaldo();
+        for(Conta c: ContaList){
+            if (c.getSaldo() == maiorS){
+                System.out.print(c);
+            }
+        }
 
     }
 }

@@ -3,9 +3,9 @@ package Model;
 public interface Associado {
      double lucros(int qdeCotas, double valorCota);
 
-     //void setqdeCotas();
+     void setqdeCotas(int cota);
 
-     //int getqdeCota();
+     int getqdeCota();
 
      //double setvalorCota();
 

@@ -1,26 +1,26 @@
 package Model;
 
 public abstract class Conta {
-    protected Double saldo;
+    protected double saldo;
 
     public Conta(){}
-    public Conta(Double Saldo) {
-        this.saldo = Saldo;
+    public Conta(double valor) {
+        this.saldo = valor;
     }
 
     public Conta(double saldo, double deposita, double valor, double taxa) {
     }
 
-    public Double getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(Double saldo) {
+    public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
     public void deposita(double deposita){
-        this.saldo = saldo + deposita;
+        this.saldo = this.saldo + deposita;
     }
     public void  saca(double valor) {
         if (this.saldo > valor) {
