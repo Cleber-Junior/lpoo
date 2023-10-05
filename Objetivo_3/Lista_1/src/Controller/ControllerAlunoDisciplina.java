@@ -17,10 +17,17 @@ public class ControllerAlunoDisciplina {
 
         d1.getAlunos().add(a1);
         a1.getDisciplinas().add(d1);
+        d2.getAlunos().add(a1);
+        a1.getDisciplinas().add(d2);
+        d1.getAlunos().add(a2);
+        a2.getDisciplinas().add(d1);
         d2.getAlunos().add(a2);
+        a2.getDisciplinas().add(d2);
+        d3.getAlunos().add(a2);
+        a2.getDisciplinas().add(d3);
 
-        System.out.println(d1);
-        System.out.println(a1.getDisciplinas());
+        System.out.println(a1);
+        System.out.println(a2);
 
     }
 }

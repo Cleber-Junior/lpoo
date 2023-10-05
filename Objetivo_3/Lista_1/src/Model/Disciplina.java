@@ -40,10 +40,8 @@ public class Disciplina {
 
     @Override
     public String toString() {
-        return "Disciplina{" +
-                "codigo=" + codigo +
-                ", nome='" + nome + '\'' +
-                ", alunos=" + alunos +
-                '}';
+        return " \n Disciplina = " +
+                "Codigo - " + codigo +
+                " | Nome - " + nome;
     }
 }

@@ -56,10 +56,10 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "Aluno{" +
-                ", matricula=" + matricula +
-                ", nome='" + nome +
-                ", sobrenome='" + sobrenome +
-                '}';
+        return "Aluno = " +
+                "Matricula - " + matricula +
+                " | Nome - " + nome +
+                " | Sobrenome - " + sobrenome +
+                "\n Disciplinas - " + Disciplinas + "\n";
     }
 }
