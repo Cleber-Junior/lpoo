@@ -6,14 +6,13 @@ import java.util.List;
 public class Empresa {
     private String cnpj;
     private String  razaoSocial;
-    private String nomeFantasma;
+    private String nomeFantasia;
     private List<Funcionario> funcionarios = new ArrayList<>();
 
-    public Empresa(String cnpj, String razaoSocial, String nomeFantasma, List<Funcionario> funcionarios) {
+    public Empresa(String cnpj, String razaoSocial, String nomeFantasia) {
         this.cnpj = cnpj;
         this.razaoSocial = razaoSocial;
-        this.nomeFantasma = nomeFantasma;
-        this.funcionarios = funcionarios;
+        this.nomeFantasia = nomeFantasia;
     }
 
     public String getCnpj() {
@@ -33,11 +32,11 @@ public class Empresa {
     }
 
     public String getNomeFantasma() {
-        return nomeFantasma;
+        return nomeFantasia;
     }
 
-    public void setNomeFantasma(String nomeFantasma) {
-        this.nomeFantasma = nomeFantasma;
+    public void setNomeFantasma(String nomeFantasia) {
+        this.nomeFantasia = nomeFantasia;
     }
 
     public List<Funcionario> getFuncionarios() {
@@ -50,11 +49,10 @@ public class Empresa {
 
     @Override
     public String toString() {
-        return "Empresa{" +
-                "cnpj='" + cnpj +
-                ", razaoSocial='" + razaoSocial +
-                ", nomeFantasma='" + nomeFantasma +
-                ", funcionarios=" + funcionarios +
-                '}';
+        return "Empresa =" +
+                "\nCNPJ:" + cnpj +
+                "\nRazaoSocial:" + razaoSocial +
+                "\nNome Fantasia:" + nomeFantasia +
+                "\nFuncionarios:" + funcionarios;
     }
 }

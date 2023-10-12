@@ -1,5 +1,6 @@
 package Model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Funcionario {
@@ -7,9 +8,9 @@ public class Funcionario {
     private String cpf;
     private String nome;
     private String sobrenome;
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
 
-    public Funcionario(int id, String cpf, String nome, String sobrenome, Date dataNascimento) {
+    public Funcionario(int id, String cpf, String nome, String sobrenome, LocalDate dataNascimento) {
         this.id = id;
         this.cpf = cpf;
         this.nome = nome;
@@ -49,22 +50,21 @@ public class Funcionario {
         this.sobrenome = sobrenome;
     }
 
-    public Date getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
     @Override
     public String toString() {
-        return "Funcionario{" +
-                "id=" + id +
-                ", cpf='" + cpf +
-                ", nome='" + nome +
-                ", sobrenome='" + sobrenome +
-                ", dataNascimento=" + dataNascimento +
-                '}';
+        return "\nFuncionario =" +
+                "\nId:" + id +
+                "\nCPF:'" + cpf +
+                "\nNome='" + nome +
+                "\nSobrenome='" + sobrenome +
+                "\nData Nascimento=" + dataNascimento + "\n";
     }
 }
