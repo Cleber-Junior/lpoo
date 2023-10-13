@@ -28,13 +28,13 @@ public class ControllerCorridaMotorista {
         System.out.println("--- Lista Corridas ---");
         System.out.println(corridaList);
 
-        System.out.println("--- Corridas Dos Motoristas ---");
+        System.out.println("\n--- Corridas Dos Motoristas ---");
         m.getCorridas().add(c1);
         m.getCorridas().add(c2);
         m.getCorridas().sort(Comparator.comparing(Corrida::getDataInicio).reversed());
         System.out.println(m.getCorridas());
 
-        System.out.println("--- Total pagamento Corridas ---");
+        System.out.println("\n--- Total pagamento Corridas ---");
         System.out.println(NumberFormat.getCurrencyInstance().format(
                 m.getCorridas().stream().mapToDouble(Corrida::getPreco).sum()));
     }

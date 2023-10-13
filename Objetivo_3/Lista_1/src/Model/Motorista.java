@@ -16,7 +16,6 @@ public class Motorista {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
-        this.corridas = corridas;
         this.veiculo = veiculo;
     }
 
@@ -70,6 +69,6 @@ public class Motorista {
 
     @Override
     public String toString() {
-        return "\nMotorista: " + " Id - " + id + "| Nome - " + nome + "| Email - " + email + "| Telefone - " + telefone + "| Corridas - " + corridas + "| Veiculo - " + veiculo;
+        return "\nMotorista: " + " Id - " + id + "| Nome - " + nome + "| Email - " + email + "| Telefone - " + telefone + "| Veiculo - " + veiculo;
     }
 }

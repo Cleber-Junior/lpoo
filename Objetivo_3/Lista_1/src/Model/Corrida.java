@@ -15,6 +15,7 @@ public class Corrida {
     private Motorista motorista;
 
     public Corrida(Long id, String tipoPagamento, String detalhePagemento, LocalDateTime dataInicio, Double preco, Usuario usuario, Motorista motorista) {
+        super();
         this.id = id;
         this.tipoPagamento = tipoPagamento;
         this.detalhePagemento = detalhePagemento;
@@ -89,7 +90,7 @@ public class Corrida {
                 "\n Detalhe Pagemento - " + detalhePagemento +
                 "\n Data Inicio - " + DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm").format(dataInicio) +
                 "\n Preco - " + NumberFormat.getCurrencyInstance().format(preco) +
-                "\n Usuario - " + usuario +
+                "\n\n Usuario - " + usuario +
                 "\n Motorista - " + motorista;
     }
 }
