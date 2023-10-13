@@ -4,27 +4,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Fornecedor {
-    private Integer cnpj;
+    private String cnpj;
     private String contato;
     private String nome;
 
     private List<Produto> produtos = new ArrayList<>();
 
-    public Fornecedor(Integer cnpj, String contato, String nome) {
+    public Fornecedor(String cnpj, String contato, String nome) {
         this.cnpj = cnpj;
         this.contato = contato;
         this.nome = nome;
     }
 
-    public boolean mainterFornecedor(int cnpj){
+    public boolean manterFornecedor(int cnpj){
         return true;
     }
 
-    public Integer getCnpj() {
+    public String getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(Integer cnpj) {
+    public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 
@@ -44,13 +44,20 @@ public class Fornecedor {
         this.nome = nome;
     }
 
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
+
     @Override
     public String toString() {
-        return "Fornecedor{" +
-                "cnpj=" + cnpj +
-                ", contato='" + contato + '\'' +
-                ", nome='" + nome + '\'' +
-                ", produtos=" + produtos +
-                '}';
+        return "\n\nFornecedor = " +
+                "CNPJ - " + cnpj +
+                "| Contato - " + contato +
+                "| Nome - " + nome + "\n" +
+                "|Produtos - " + produtos;
     }
 }

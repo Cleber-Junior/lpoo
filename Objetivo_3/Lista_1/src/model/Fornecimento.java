@@ -1,27 +1,25 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Fornecimento {
-    private Date data;
+    private LocalDate data;
     private Double valorTotal;
     private List<Fornecedor> fornecedores = new ArrayList<>();
     private List<Produto> produtos = new ArrayList<>();
 
-    public Fornecimento(Date data, Double valorTotal, List<Fornecedor> fornecedores, List<Produto> produtos) {
+    public Fornecimento(LocalDate data, Double valorTotal) {
         this.data = data;
         this.valorTotal = valorTotal;
-        this.fornecedores = fornecedores;
-        this.produtos = produtos;
     }
 
-    public Date getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 
@@ -51,11 +49,10 @@ public class Fornecimento {
 
     @Override
     public String toString() {
-        return "Fornecimento{" +
-                "data=" + data +
-                ", valorTotal=" + valorTotal +
-                ", fornecedores=" + fornecedores +
-                ", produtos=" + produtos +
-                '}';
+        return "Fornecimento = " +
+                " Data - " + data +
+                "| ValorTotal - " + valorTotal + "\n" +
+                "|Fornecedores - " + fornecedores + "\n" +
+                "|Produtos - " + produtos;
     }
 }
