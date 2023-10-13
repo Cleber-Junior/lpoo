@@ -47,11 +47,6 @@ public class Veiculo {
 
     @Override
     public String toString() {
-        return "Veiculo = " +
-                "id - " + id +
-                ", tipo - " + tipo +
-                ", placa - " + placa +
-                ", anoFabricacao - " + anoFabricacao +
-                '}';
+        return "Veiculo = " + "Id - " + id + "| Tipo - " + tipo + "| Placa - " + placa + "| Ano Fabricacao - " + anoFabricacao;
     }
 }

@@ -1,22 +1,28 @@
 package Model;
 
+import java.text.NumberFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class Corrida {
     private Long id;
     private String tipoPagamento;
     private String detalhePagemento;
-    private Date dataInicio;
+    private LocalDateTime dataInicio;
     private Double preco;
-    private Integer Attribute;
+    private Usuario usuario;
+    private Motorista motorista;
 
-    public Corrida(Long id, String tipoPagamento, String detalhePagemento, Date dataInicio, Double preco, Integer attribute) {
+    public Corrida(Long id, String tipoPagamento, String detalhePagemento, LocalDateTime dataInicio, Double preco, Usuario usuario, Motorista motorista) {
         this.id = id;
         this.tipoPagamento = tipoPagamento;
         this.detalhePagemento = detalhePagemento;
         this.dataInicio = dataInicio;
         this.preco = preco;
-        Attribute = attribute;
+        this.usuario = usuario;
+        this.motorista = motorista;
+
     }
 
     public Long getId() {
@@ -43,11 +49,11 @@ public class Corrida {
         this.detalhePagemento = detalhePagemento;
     }
 
-    public Date getDataInicio() {
+    public LocalDateTime getDataInicio() {
         return dataInicio;
     }
 
-    public void setDataInicio(Date dataInicio) {
+    public void setDataInicio(LocalDateTime dataInicio) {
         this.dataInicio = dataInicio;
     }
 
@@ -59,23 +65,31 @@ public class Corrida {
         this.preco = preco;
     }
 
-    public Integer getAttribute() {
-        return Attribute;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setAttribute(Integer attribute) {
-        Attribute = attribute;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Motorista getMotorista() {
+        return motorista;
+    }
+
+    public void setMotorista(Motorista motorista) {
+        this.motorista = motorista;
     }
 
     @Override
     public String toString() {
-        return "Corrida{" +
-                "id=" + id +
-                ", tipoPagamento = " + tipoPagamento +
-                ", detalhePagemento = " + detalhePagemento +
-                ", dataInicio = " + dataInicio +
-                ", preco = " + preco +
-                ", Attribute = " + Attribute +
-                '}';
+        return "\nCorrida = " +
+                "id - " + id +
+                "\n Tipo Pagamento - " + tipoPagamento +
+                "\n Detalhe Pagemento - " + detalhePagemento +
+                "\n Data Inicio - " + DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm").format(dataInicio) +
+                "\n Preco - " + NumberFormat.getCurrencyInstance().format(preco) +
+                "\n Usuario - " + usuario +
+                "\n Motorista - " + motorista;
     }
 }

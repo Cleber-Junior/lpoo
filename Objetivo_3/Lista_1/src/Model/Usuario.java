@@ -10,12 +10,11 @@ public class Usuario {
     private String telefone;
     private List<Corrida> corridas = new ArrayList<>();
 
-    public Usuario(Long id, String nome, String email, String telefone, List<Corrida> corridas) {
+    public Usuario(Long id, String nome, String email, String telefone) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
-        this.corridas = corridas;
     }
 
     public Long getId() {
@@ -60,12 +59,11 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario = " +
+        return "\nUsuario = " +
                 "id - " + id +
-                ", nome -" + nome +
-                ", email -" + email +
-                ", telefone - " + telefone +
-                ", corridas - " + corridas +
-                '}';
+                "| Nome - " + nome +
+                "| Email - " + email +
+                "| Telefone - " + telefone +
+                "| Corridas - " + corridas;
     }
 }

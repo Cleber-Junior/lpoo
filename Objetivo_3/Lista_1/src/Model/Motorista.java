@@ -9,13 +9,15 @@ public class Motorista {
     private String email;
     private String telefone;
     private List<Corrida> corridas = new ArrayList<>();
+    private Veiculo veiculo;
 
-    public Motorista(Long id, String nome, String email, String telefone, List<Corrida> corridas) {
+    public Motorista(Long id, String nome, String email, String telefone, Veiculo veiculo) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
         this.corridas = corridas;
+        this.veiculo = veiculo;
     }
 
     public Long getId() {
@@ -58,14 +60,16 @@ public class Motorista {
         this.corridas = corridas;
     }
 
+    public Veiculo getVeiculo() {
+        return veiculo;
+    }
+
+    public void setVeiculo(Veiculo veiculo) {
+        this.veiculo = veiculo;
+    }
+
     @Override
     public String toString() {
-        return "Motorista{" +
-                "id=" + id +
-                ", nome='" + nome +
-                ", email='" + email +
-                ", telefone='" + telefone +
-                ", corridas=" + corridas +
-                '}';
+        return "\nMotorista: " + " Id - " + id + "| Nome - " + nome + "| Email - " + email + "| Telefone - " + telefone + "| Corridas - " + corridas + "| Veiculo - " + veiculo;
     }
 }
