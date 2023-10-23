@@ -35,11 +35,11 @@ public class VendasController {
         pedido2.attQ(i2);
         pedido2.attQ(i3);
 
-        List<Pedido> vendas = new ArrayList<>();
-        vendas.add(pedido1);
-        vendas.add(pedido2);
+        List<Pedido> vendaList = new ArrayList<>();
+        vendaList.add(pedido1);
+        vendaList.add(pedido2);
         System.out.println("\n---- 1.b (Vendas Realizadas)----");
-        System.out.println(vendas);
+        System.out.println(vendaList);
 
         System.out.println("\n---- 1.b (Atualização do Estoque) ----");
         System.out.println(p1);
